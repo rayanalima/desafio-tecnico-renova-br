@@ -1,26 +1,19 @@
 import React, { useEffect, useState } from "react";
 import api from '../api';
 import {
-    Container,
     Stack,
     Flex,
-    Box,
     Heading,
     Text,
-    Button,
-    Image,
-    Icon,
-    IconButton,
-    createIcon,
-    IconProps,
     useColorModeValue,
     Link,
     SimpleGrid,
     chakra  } from '@chakra-ui/react';
-  import Navbar from '../components/Navbar'
 
 export default function ListComponent() {
   const [candidates, setCandidates] = useState([]);
+  const [userId, setUserId] = useState(0);
+
   useEffect(() => {
     api.get("/users/")
        .then((response) => {
@@ -31,11 +24,42 @@ export default function ListComponent() {
       });
   }, []);
 
+  const a = 5
+
   const dataColor = useColorModeValue("white", "gray.800");
   const bg = useColorModeValue("white", "gray.800");
   const bg2 = useColorModeValue("gray.100", "gray.700");
     return (
     <>
+<Stack
+          align={'center'}
+          textAlign='center'
+          spacing={{ base: 8, md: 5 }}
+          py={{ base: 4, md: 10 }}
+          direction={{ base: 'column', md: 'row' }}>
+          <Stack flex={1} spacing={{ base: 5, md: 10 }}>
+            <Heading
+              lineHeight={1.1}
+              fontWeight={600}
+              fontSize={{ base: '3xl', sm: '4xl', lg: '6xl' }}>
+              <Text
+                as={'span'}
+                position={'relative'}
+                _after={{
+                  content: "''",
+                  width: 'full',
+                  height: '30%',
+                  position: 'absolute',
+                  bottom: 1,
+                  left: 0,
+                  zIndex: -1,
+                }}
+                color='#95e6ad'>
+                Candidatos
+              </Text>
+              </Heading>
+              </Stack>
+              </Stack>
         <Flex
         w="full"
         bg="#edf3f8"
@@ -45,7 +69,8 @@ export default function ListComponent() {
         p={50}
         alignItems="center"
         justifyContent="center"
-        textAlign='center'      >
+        textAlign='center'>
+
         <Stack
           direction={{
             base: "column",
@@ -58,6 +83,7 @@ export default function ListComponent() {
         >
           {candidates.map((candidate) => {
             return (
+            <Link href={'/candidate/' + candidate.user_id}>
               <Flex
                 direction={{
                   base: "row",
@@ -115,10 +141,12 @@ export default function ListComponent() {
                   </chakra.span>
                 </SimpleGrid>
               </Flex>
+              </Link>
             );
           })}
-        </Stack>
+        </Stack>  
       </Flex>
     </>
     );
+    console.log(userId)
   };

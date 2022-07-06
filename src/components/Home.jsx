@@ -61,6 +61,7 @@ import LogoIcon from '../images/logo.png'
               spacing={{ base: 4, sm: 6 }}
               direction={{ base: 'column', sm: 'row' }}
               alignSelf='center'>
+            <Link href='/candidates/list'>
               <Button
                 rounded={'full'}
                 size={'lg'}
@@ -71,6 +72,7 @@ import LogoIcon from '../images/logo.png'
                 _hover={{ bg: '#38E069' }}>
                 Ver participantes
               </Button>
+              </Link>
             </Stack>
           </Stack>
         </Stack>
