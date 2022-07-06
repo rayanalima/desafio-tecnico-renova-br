@@ -12,8 +12,9 @@ import {
     createIcon,
     IconProps,
     useColorModeValue,
+    Link
   } from '@chakra-ui/react';
-  import LogoIcon from '../images/logo.png'
+import LogoIcon from '../images/logo.png'
 
 
   export default function HomeComponent() {
@@ -52,7 +53,9 @@ import {
                 Processo seletivo
               </Text>
               <br />
+              <Link href='https://renovabr.org/' isExternal>
               <Image mt={2} ml={390} src={LogoIcon} h={150}/>
+              </Link>
             </Heading>
             <Stack
               spacing={{ base: 4, sm: 6 }}

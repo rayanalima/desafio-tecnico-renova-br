@@ -18,8 +18,6 @@ import HomeComponent from '../components/Home';
 
 
   export default function Home() {
-    const GET_USER = 'https://desenvolvimento.renovabr.org/api/v1/users/';
-console.log(GET_USER)
     return (
     <>
     <Navbar />

@@ -12,11 +12,17 @@ import {
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 import Home from './pages/Home'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import List from './pages/List';
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <Home />
+      <BrowserRouter>
+      <Routes>
+        <Route exact path='/' element={<Home />} />
+        <Route exact path='/candidate/list' element={<List />} />
+      </Routes>
+      </BrowserRouter>
     </ChakraProvider>
   );
 }
