@@ -52,11 +52,8 @@ import {
                 Processo seletivo
               </Text>
               <br />
-              <Image src={LogoIcon} h={150}/>
+              <Image mt={2} ml={390} src={LogoIcon} h={150}/>
             </Heading>
-            <Text color={'gray.500'}>
-        
-            </Text>
             <Stack
               spacing={{ base: 4, sm: 6 }}
               direction={{ base: 'column', sm: 'row' }}
