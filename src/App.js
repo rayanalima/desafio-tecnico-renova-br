@@ -13,6 +13,7 @@ import { ColorModeSwitcher } from './ColorModeSwitcher';
 import Home from './pages/Home'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import List from './pages/List';
+import Details from './pages/Details';
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
       <BrowserRouter>
       <Routes>
         <Route exact path='/' element={<Home />} />
-        <Route exact path='/candidate/list' element={<List />} />
+        <Route path='/candidates/list' element={<List />} />
+        <Route path='/candidate/:userId' element={<Details />} />
       </Routes>
       </BrowserRouter>
     </ChakraProvider>
