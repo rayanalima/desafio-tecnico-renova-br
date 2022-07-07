@@ -49,7 +49,7 @@ export default function HomeComponent() {
               </Text>
               <br />
               <Link href="https://renovabr.org/" isExternal>
-                <Image src={LogoIcon} h={150}  pl={[0, 390]} pt={10} />
+                <Image alt='Icone RenovaBR' src={LogoIcon} h={150} pl={[0, 390]} pt={10} />
               </Link>
             </Heading>
             <Stack
