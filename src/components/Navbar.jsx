@@ -26,7 +26,7 @@ export default function Nav() {
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <Link href="https://renovabr.org/" isExternal>
             <Box>
-              <Image src={LogoIcon} w={40} />
+              <Image alt='icone RenovaBr' src={LogoIcon} w={40} />
             </Box>
           </Link>
           <Flex alignItems={'center'}>
